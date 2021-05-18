@@ -8,15 +8,17 @@ import Tabla from "./Tabla";
 
 class Usuarios extends Component {
 
-    constructor(){
-        super();
-        this.state = {
-            usuarios: []
-        }
-    }
+    // constructor(){
+    //     super();
+    //     this.state = {
+    //         usuarios: []
+    //     }
+    // }
 
     componentDidMount(){
-        this.props.traerTodos();
+        if(!this.props.usuarios.length){
+            this.props.traerTodos();
+        }
     }
 
     ponerContenido = () => {
